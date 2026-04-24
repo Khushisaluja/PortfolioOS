@@ -1,7 +1,7 @@
 
-  # Interactive Landing Page Design
+Hi'I'm Khushi. I Design :)
 
-  This is a code bundle for Interactive Landing Page Design. The original project is available at https://www.figma.com/design/uOYakzAup0uIFOHFlkgog1/Interactive-Landing-Page-Design.
+The original design project is available at https://www.figma.com/design/QAfTOLzwZ9MvNl3Auq1Bk8/Portfolio--Copy-?node-id=0-1&t=PhFdKlVpDKxzfEnb-1
 
   ## Running the code
 
