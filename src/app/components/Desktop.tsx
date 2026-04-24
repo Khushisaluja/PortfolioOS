@@ -306,7 +306,7 @@ function Taskbar({ onPocket, isMobile }: { onPocket: () => void; isMobile: boole
             border: "0.5px solid rgba(35,75,157,0.5)",
           }}
         >
-          <img src={imgMprui2} className="w-5 h-5 object-contain" alt="" />
+          <img src={imgMprui2} style={{ width: isMobile ? 40 : 50, height: isMobile ? 40 : 50, objectFit: "contain" }} alt="" />
           {!isMobile && (
             <span style={{ fontFamily: "'Segoe UI', sans-serif", fontSize: 14 }}>
               Pocket Tanks
