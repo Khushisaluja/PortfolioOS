@@ -40,7 +40,7 @@ export default function App() {
   const close = () => setDialog(null);
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden" style={{ cursor: "default" }}>
+    <div className="relative w-full h-full overflow-hidden" style={{ cursor: "default" }}>
       {!booted && <SplashScreen onDone={() => setBooted(true)} />}
       <Desktop onOpen={open} />
       <MenuBar />
