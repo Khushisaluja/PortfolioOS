@@ -134,39 +134,9 @@ export function Desktop({ onOpen }: { onOpen: (k: FolderKey) => void }) {
           className="absolute inset-0 flex flex-col items-center overflow-y-auto"
           style={{ paddingTop: 44, paddingBottom: 52 }}
         >
-          {/* Character – tap to toggle greeting */}
-          <motion.div
-            onClick={() => setGreetingVisible((v) => !v)}
-            whileTap={{ scale: 0.97 }}
-            className="relative cursor-pointer mt-2 mb-1"
-            style={{ width: 88, height: 200 }}
-          >
-            <img src={imgSubject21} alt="Khushi" className="w-full h-full object-contain" />
-            {greetingVisible && greetingBubble(16, true)}
-          </motion.div>
-
+          {/* Caption at top */}
           <p
-            className="text-white/70 text-xs mb-6 select-none"
-            style={{ fontFamily: "'SF Pro', -apple-system, sans-serif" }}
-          >
-            tap to say hi 👆
-          </p>
-
-          {/* Folder grid */}
-          <div
-            className="grid gap-x-8 gap-y-6 mb-6"
-            style={{ gridTemplateColumns: "repeat(2, 90px)" }}
-          >
-            <Folder label="Projects" onClick={() => onOpen("projects")} small />
-            <Folder label="Contact"  onClick={() => onOpen("contact")}  small />
-            <Folder label="Resume"   onClick={() => onOpen("resume")}   small />
-            <Folder label="Koffee!"  onClick={() => onOpen("koffee")}   small />
-            <Folder label="About"    onClick={() => onOpen("about")}    small />
-          </div>
-
-          {/* Caption */}
-          <p
-            className="text-white text-center px-6"
+            className="text-white text-center px-6 mt-4 mb-1"
             style={{
               fontFamily: "'Ancizar Serif', serif",
               fontSize: 15,
@@ -176,6 +146,63 @@ export function Desktop({ onOpen }: { onOpen: (k: FolderKey) => void }) {
           >
             A 90s crossover between <b><i>Windows</i></b> and <b><i>macOS</i></b>...
           </p>
+          <p
+            className="text-white/40 text-center px-6 mb-6 select-none"
+            style={{ fontFamily: "'Ancizar Serif', serif", fontSize: 12, fontStyle: "italic" }}
+          >
+            (website better optimized for desktop)
+          </p>
+
+          {/* Folder grid */}
+          <div
+            className="grid gap-x-8 gap-y-6 mb-8"
+            style={{ gridTemplateColumns: "repeat(2, 90px)" }}
+          >
+            <Folder label="Projects" onClick={() => onOpen("projects")} small />
+            <Folder label="Contact"  onClick={() => onOpen("contact")}  small />
+            <Folder label="Resume"   onClick={() => onOpen("resume")}   small />
+            <Folder label="Koffee!"  onClick={() => onOpen("koffee")}   small />
+            <Folder label="About"    onClick={() => onOpen("about")}    small />
+          </div>
+
+          {/* Character – cropped to head/shoulders, tap to toggle greeting */}
+          <div className="relative flex flex-col items-center">
+            {/* Bubble lives outside overflow-hidden so it isn't clipped */}
+            {greetingVisible && (
+              <motion.div
+                initial={{ opacity: 0, y: 6, scale: 0.85 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ type: "spring", stiffness: 400, damping: 18 }}
+                className="absolute -top-12 left-1/2 -translate-x-1/2 whitespace-nowrap pointer-events-none z-10"
+              >
+                <div
+                  className="relative bg-white text-black px-4 py-1.5 rounded-full shadow-[0_8px_20px_rgba(0,0,0,0.3)]"
+                  style={{ fontFamily: "'Ancizar Serif', serif", fontSize: 14, fontStyle: "italic" }}
+                >
+                  Hi, I'm Khushi. I design :)
+                  <div className="absolute left-1/2 -bottom-2 -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white" />
+                </div>
+              </motion.div>
+            )}
+            <p
+              className="text-white/70 text-xs mb-2 select-none"
+              style={{ fontFamily: "'SF Pro', -apple-system, sans-serif" }}
+            >
+              tap to say hi 👇
+            </p>
+            <motion.div
+              onClick={() => setGreetingVisible((v) => !v)}
+              className="cursor-pointer overflow-hidden"
+              style={{ width: 110, height: 140, borderRadius: "50% 50% 0 0" }}
+            >
+              <img
+                src={imgSubject21}
+                alt="Khushi"
+                className="absolute w-full object-cover object-top"
+                style={{ height: 260 }}
+              />
+            </motion.div>
+          </div>
         </div>
       ) : (
         /* ── Desktop layout (unchanged) ── */
