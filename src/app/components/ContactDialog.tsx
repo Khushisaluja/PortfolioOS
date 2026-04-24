@@ -116,7 +116,7 @@ export function ContactDialog({ onClose }: { onClose: () => void }) {
               {copied ? "Copied!" : "Copy email instead"}
             </span>
           </RetroButton>
-          <RetroButton>
+          <RetroButton type="submit">
             {status === "sending" ? "Sending…" : "Send"}
           </RetroButton>
         </div>

@@ -64,13 +64,16 @@ export function RetroButton({
   children,
   onClick,
   className = "",
+  type = "button",
 }: {
   children: ReactNode;
   onClick?: () => void;
   className?: string;
+  type?: "button" | "submit";
 }) {
   return (
     <button
+      type={type}
       onClick={onClick}
       className={`px-4 py-1 bg-[#bfbfbf] text-black active:translate-y-[1px] active:shadow-[inset_2px_2px_0_0_#000,inset_-1px_-1px_0_0_#fff,inset_3px_3px_0_0_#808080,inset_-2px_-2px_0_0_#dbdbdb] transition-transform hover:brightness-105 ${className}`}
       style={{
