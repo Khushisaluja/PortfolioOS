@@ -174,7 +174,7 @@ export function Desktop({ onOpen }: { onOpen: (k: FolderKey) => void }) {
               maxWidth: 320,
             }}
           >
-            If <b><i>Windows</i></b> and <b><i>MacOS</i></b> had an illegitimate baby in the 90s, this would be it :)
+            A 90s crossover between <b><i>Windows</i></b> and <b><i>macOS</i></b>...
           </p>
         </div>
       ) : (
@@ -215,7 +215,7 @@ export function Desktop({ onOpen }: { onOpen: (k: FolderKey) => void }) {
               maxWidth: "70%",
             }}
           >
-            If <b><i>Windows</i></b> and <b><i>MacOS</i></b> had an illegitimate baby in the 90s, this would be it :)
+            A 90s crossover between <b><i>Windows</i></b> and <b><i>macOS</i></b>...
           </p>
         </>
       )}
